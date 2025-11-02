@@ -1,0 +1,486 @@
+{
+    "changeRequests": [
+      {
+        "changeId": "CHG0045821",
+        "title": "Database Schema Migration - Payment Service",
+        "submittedBy": "Sarah Chen",
+        "team": "Payment Engineering",
+        "priority": "High",
+        "category": "Database",
+        "environment": "Production",
+        "scheduledTime": "2025-10-20 02:00 AM",
+        "estimatedDuration": "2 hours",
+        "affectedServices": [
+          "payment-api",
+          "billing-service",
+          "invoice-generator"
+        ],
+        "dependencyCount": 12,
+        "previousFailures": 2,
+        "lastDeploymentSuccess": "85%",
+        "businessContext": "Payroll Processing Week",
+        "riskScore": 78,
+        "riskLevel": "High"
+      },
+      {
+        "changeId": "CHG0045822",
+        "title": "Update SSL Certificates - Web Gateway",
+        "submittedBy": "Mike Rodriguez",
+        "team": "Infrastructure",
+        "priority": "Critical",
+        "category": "Security",
+        "environment": "Production",
+        "scheduledTime": "2025-10-16 01:00 AM",
+        "estimatedDuration": "30 minutes",
+        "affectedServices": [
+          "api-gateway",
+          "web-proxy"
+        ],
+        "dependencyCount": 45,
+        "previousFailures": 0,
+        "lastDeploymentSuccess": "100%",
+        "businessContext": "Normal Operations",
+        "riskScore": 42,
+        "riskLevel": "Medium"
+      },
+      {
+        "changeId": "CHG0045823",
+        "title": "Kubernetes Cluster Upgrade v1.28 to v1.29",
+        "submittedBy": "David Park",
+        "team": "Platform Engineering",
+        "priority": "Medium",
+        "category": "Infrastructure",
+        "environment": "Production",
+        "scheduledTime": "2025-10-22 03:00 AM",
+        "estimatedDuration": "4 hours",
+        "affectedServices": [
+          "all-microservices"
+        ],
+        "dependencyCount": 150,
+        "previousFailures": 1,
+        "lastDeploymentSuccess": "90%",
+        "businessContext": "Black Friday Prep Period",
+        "riskScore": 85,
+        "riskLevel": "Critical"
+      },
+      {
+        "changeId": "CHG0045824",
+        "title": "Feature Flag Rollout - New Checkout UI",
+        "submittedBy": "Emily Watson",
+        "team": "Frontend Team",
+        "priority": "Low",
+        "category": "Feature",
+        "environment": "Production",
+        "scheduledTime": "2025-10-17 10:00 AM",
+        "estimatedDuration": "15 minutes",
+        "affectedServices": [
+          "checkout-ui"
+        ],
+        "dependencyCount": 3,
+        "previousFailures": 0,
+        "lastDeploymentSuccess": "98%",
+        "businessContext": "Normal Operations",
+        "riskScore": 15,
+        "riskLevel": "Low"
+      }
+    ],
+    "historicalFailures": [
+      {
+        "incidentId": "INC-2024-08-142",
+        "changeId": "CHG0042156",
+        "date": "2024-08-15",
+        "title": "Database Connection Pool Exhaustion",
+        "category": "Database",
+        "rootCause": "Insufficient connection pool sizing after schema change",
+        "downtime": "3.5 hours",
+        "affectedUsers": 45000,
+        "revenue_impact": "$125,000",
+        "slaBreached": true,
+        "rollbackTime": "45 minutes"
+      },
+      {
+        "incidentId": "INC-2024-09-087",
+        "changeId": "CHG0043201",
+        "date": "2024-09-22",
+        "title": "Payment Gateway Timeout",
+        "category": "API",
+        "rootCause": "New rate limiting broke payment processing",
+        "downtime": "1.2 hours",
+        "affectedUsers": 12000,
+        "revenue_impact": "$85,000",
+        "slaBreached": true,
+        "rollbackTime": "20 minutes"
+      },
+      {
+        "incidentId": "INC-2024-10-003",
+        "changeId": "CHG0044789",
+        "date": "2024-10-05",
+        "title": "Cache Invalidation Cascade",
+        "category": "Infrastructure",
+        "rootCause": "Redis cluster upgrade caused cache stampede",
+        "downtime": "2.8 hours",
+        "affectedUsers": 78000,
+        "revenue_impact": "$210,000",
+        "slaBreached": true,
+        "rollbackTime": "1.5 hours"
+      },
+      {
+        "incidentId": "INC-2024-07-056",
+        "changeId": "CHG0041234",
+        "date": "2024-07-12",
+        "title": "Authentication Service Degradation",
+        "category": "Security",
+        "rootCause": "Certificate expiration during auth service update",
+        "downtime": "0.8 hours",
+        "affectedUsers": 32000,
+        "revenue_impact": "$45,000",
+        "slaBreached": false,
+        "rollbackTime": "15 minutes"
+      },
+      {
+        "incidentId": "INC-2024-06-128",
+        "changeId": "CHG0040567",
+        "date": "2024-06-28",
+        "title": "Load Balancer Configuration Error",
+        "category": "Infrastructure",
+        "rootCause": "Incorrect health check settings caused service unavailability",
+        "downtime": "1.5 hours",
+        "affectedUsers": 55000,
+        "revenue_impact": "$92,000",
+        "slaBreached": true,
+        "rollbackTime": "30 minutes"
+      },
+      {
+        "incidentId": "INC-2024-05-089",
+        "changeId": "CHG0039876",
+        "date": "2024-05-18",
+        "title": "Checkout System Failure During Flash Sale",
+        "category": "API",
+        "rootCause": "New payment API update couldn't handle sudden traffic spike",
+        "downtime": "2.3 hours",
+        "affectedUsers": 89000,
+        "revenue_impact": "$340,000",
+        "slaBreached": true,
+        "rollbackTime": "50 minutes"
+      },
+      {
+        "incidentId": "INC-2024-04-234",
+        "changeId": "CHG0038654",
+        "date": "2024-04-22",
+        "title": "Mobile App Login Issues",
+        "category": "Security",
+        "rootCause": "Authentication token expiration settings changed incorrectly",
+        "downtime": "1.8 hours",
+        "affectedUsers": 67000,
+        "revenue_impact": "$78,000",
+        "slaBreached": true,
+        "rollbackTime": "35 minutes"
+      },
+      {
+        "incidentId": "INC-2024-03-167",
+        "changeId": "CHG0037421",
+        "date": "2024-03-10",
+        "title": "Product Catalog Search Outage",
+        "category": "Database",
+        "rootCause": "Database indexing update caused search functionality to fail",
+        "downtime": "3.1 hours",
+        "affectedUsers": 94000,
+        "revenue_impact": "$156,000",
+        "slaBreached": true,
+        "rollbackTime": "1.2 hours"
+      },
+      {
+        "incidentId": "INC-2024-02-045",
+        "changeId": "CHG0036198",
+        "date": "2024-02-14",
+        "title": "Email Notification System Down",
+        "category": "Infrastructure",
+        "rootCause": "Email service configuration error after infrastructure upgrade",
+        "downtime": "4.5 hours",
+        "affectedUsers": 120000,
+        "revenue_impact": "$65,000",
+        "slaBreached": true,
+        "rollbackTime": "2 hours"
+      },
+      {
+        "incidentId": "INC-2024-01-092",
+        "changeId": "CHG0035067",
+        "date": "2024-01-29",
+        "title": "Shopping Cart Data Loss",
+        "category": "Database",
+        "rootCause": "Cache synchronization issue after database migration",
+        "downtime": "2.7 hours",
+        "affectedUsers": 45000,
+        "revenue_impact": "$189,000",
+        "slaBreached": true,
+        "rollbackTime": "1.5 hours"
+      }
+    ],
+    "serviceDependencies": [
+      {
+        "serviceName": "payment-api",
+        "directDependencies": [
+          "auth-service",
+          "fraud-detection",
+          "payment-gateway"
+        ],
+        "indirectDependencies": [
+          "user-profile",
+          "notification-service",
+          "audit-logger"
+        ],
+        "consumedBy": [
+          "checkout-ui",
+          "mobile-app",
+          "billing-service"
+        ],
+        "criticalityScore": 95,
+        "avgRequestsPerMin": 5000,
+        "p99Latency": "250ms"
+      },
+      {
+        "serviceName": "auth-service",
+        "directDependencies": [
+          "user-database",
+          "session-store",
+          "mfa-service"
+        ],
+        "indirectDependencies": [
+          "email-service"
+        ],
+        "consumedBy": [
+          "payment-api",
+          "checkout-ui",
+          "admin-portal",
+          "mobile-app"
+        ],
+        "criticalityScore": 98,
+        "avgRequestsPerMin": 15000,
+        "p99Latency": "100ms"
+      },
+      {
+        "serviceName": "checkout-ui",
+        "directDependencies": [
+          "payment-api",
+          "product-catalog",
+          "cart-service"
+        ],
+        "indirectDependencies": [
+          "inventory-service",
+          "shipping-calculator"
+        ],
+        "consumedBy": [
+          "web-gateway"
+        ],
+        "criticalityScore": 90,
+        "avgRequestsPerMin": 8000,
+        "p99Latency": "500ms"
+      },
+      {
+        "serviceName": "Database Server",
+        "directDependencies": [],
+        "indirectDependencies": [],
+        "consumedBy": [
+          "auth-service",
+          "reporting-engine",
+          "user-profile"
+        ],
+        "criticalityScore": 99,
+        "avgRequestsPerMin": 20000,
+        "p99Latency": "50ms"
+      },
+      {
+        "serviceName": "API Gateway",
+        "directDependencies": ["auth-service", "payment-api", "product-catalog"],
+        "indirectDependencies": [],
+        "consumedBy": ["web-proxy", "mobile-app"],
+        "criticalityScore": 97,
+        "avgRequestsPerMin": 25000,
+        "p99Latency": "80ms"
+      },
+      {
+        "serviceName": "Load Balancer",
+        "directDependencies": ["web-proxy"],
+        "indirectDependencies": ["api-gateway", "auth-service", "payment-api"],
+        "consumedBy": ["internet-users"],
+        "criticalityScore": 96,
+        "avgRequestsPerMin": 30000,
+        "p99Latency": "120ms"
+      },
+      {
+        "serviceName": "Service A",
+        "directDependencies": [],
+        "indirectDependencies": [],
+        "consumedBy": ["reporting-engine"],
+        "criticalityScore": 70,
+        "avgRequestsPerMin": 1000,
+        "p99Latency": "300ms"
+      },
+      {
+        "serviceName": "Service B",
+        "directDependencies": ["Service A"],
+        "indirectDependencies": [],
+        "consumedBy": ["internal-tool"],
+        "criticalityScore": 65,
+        "avgRequestsPerMin": 800,
+        "p99Latency": "350ms"
+      },
+      {
+        "serviceName": "Service C",
+        "directDependencies": [],
+        "indirectDependencies": [],
+        "consumedBy": [],
+        "criticalityScore": 60,
+        "avgRequestsPerMin": 500,
+        "p99Latency": "400ms"
+      },
+      {
+        "serviceName": "ReportingTool",
+        "directDependencies": ["Database Server", "data-warehouse"],
+        "indirectDependencies": [],
+        "consumedBy": ["Analytics Dashboard", "billing-service"],
+        "criticalityScore": 80,
+        "avgRequestsPerMin": 1000,
+        "p99Latency": "600ms"
+      }
+    ],
+    "businessEvents": [
+      {
+        "eventId": "BUS-001",
+        "eventName": "Monthly Payroll Processing",
+        "startDate": "2025-10-18",
+        "endDate": "2025-10-20",
+        "criticality": "Critical",
+        "impactedSystems": [
+          "payment-api",
+          "billing-service",
+          "reporting-engine"
+        ],
+        "blackoutWindow": true,
+        "estimatedTransactions": 150000,
+        "notes": "Zero-downtime required for payroll processing"
+      },
+      {
+        "eventId": "BUS-002",
+        "eventName": "Black Friday Sale Preparation",
+        "startDate": "2025-10-20",
+        "endDate": "2025-11-30",
+        "criticality": "Critical",
+        "impactedSystems": [
+          "all-systems"
+        ],
+        "blackoutWindow": true,
+        "estimatedTransactions": 5000000,
+        "notes": "Code freeze except emergency fixes"
+      },
+      {
+        "eventId": "BUS-003",
+        "eventName": "Quarterly Tax Filing",
+        "startDate": "2025-10-25",
+        "endDate": "2025-10-27",
+        "criticality": "High",
+        "impactedSystems": [
+          "tax-calculation",
+          "reporting-engine",
+          "billing-service"
+        ],
+        "blackoutWindow": false,
+        "estimatedTransactions": 50000,
+        "notes": "Change advisory board approval required"
+      },
+      {
+        "eventId": "BUS-004",
+        "eventName": "Partner Integration Testing",
+        "startDate": "2025-10-16",
+        "endDate": "2025-10-17",
+        "criticality": "Medium",
+        "impactedSystems": [
+          "api-gateway",
+          "partner-api"
+        ],
+        "blackoutWindow": false,
+        "estimatedTransactions": 5000,
+        "notes": "Coordinate with external partners"
+      }
+    ],
+    "riskAssessments": [
+      {
+        "changeId": "CHG0045821",
+        "overallRiskScore": 78,
+        "riskFactors": {
+          "historicalFailureRate": 0.15,
+          "dependencyComplexity": 0.85,
+          "businessImpact": 0.95,
+          "teamExperience": 0.7,
+          "changeComplexity": 0.8
+        },
+        "recommendations": [
+          "DEFER: Schedule after payroll processing window (after Oct 20)",
+          "IMPLEMENT: Full database backup and rollback script",
+          "STRATEGY: Blue-green deployment with gradual traffic shift",
+          "MONITORING: Enhanced APM on payment services for 48 hours post-deployment"
+        ],
+        "safestWindow": "2025-10-21 02:00 AM",
+        "estimatedBlastRadius": "45,000 users",
+        "confidence": 0.87
+      },
+      {
+        "changeId": "CHG0045823",
+        "overallRiskScore": 85,
+        "riskFactors": {
+          "historicalFailureRate": 0.1,
+          "dependencyComplexity": 0.95,
+          "businessImpact": 0.98,
+          "teamExperience": 0.85,
+          "changeComplexity": 0.9
+        },
+        "recommendations": [
+          "BLOCK: Conflicts with Black Friday prep period",
+          "RESCHEDULE: Recommend December maintenance window",
+          "REQUIRED: Conduct full staging environment test",
+          "STRATEGY: Rolling upgrade with canary deployment per availability zone"
+        ],
+        "safestWindow": "2025-12-08 02:00 AM",
+        "estimatedBlastRadius": "All users (150,000+)",
+        "confidence": 0.92
+      }
+    ],
+    "systemMetrics": [
+      {
+        "timestamp": "2025-10-15 00:00",
+        "cpu": 45,
+        "memory": 62,
+        "errorRate": 0.02,
+        "requestRate": 4500
+      },
+      {
+        "timestamp": "2025-10-15 06:00",
+        "cpu": 52,
+        "memory": 65,
+        "errorRate": 0.03,
+        "requestRate": 5200
+      },
+      {
+        "timestamp": "2025-10-15 12:00",
+        "cpu": 78,
+        "memory": 72,
+        "errorRate": 0.05,
+        "requestRate": 8900
+      },
+      {
+        "timestamp": "2025-10-15 18:00",
+        "cpu": 82,
+        "memory": 75,
+        "errorRate": 0.08,
+        "requestRate": 9500
+      },
+      {
+        "timestamp": "2025-10-15 22:00",
+        "cpu": 58,
+        "memory": 68,
+        "errorRate": 0.04,
+        "requestRate": 6200
+      }
+    ]
+  }
+  
