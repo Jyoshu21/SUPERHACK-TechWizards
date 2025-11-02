@@ -86,7 +86,7 @@ Learns from past incidents and applies lessons
 User Request → Agent Query → Tool Selection → Multi-step Analysis → Final Assessment
 
 
-The agent autonomously decides which tools to call and in what order, then synthesizes all outputs into a comprehensive risk assessment.
+The agent autonomously decides which tools to use and in what order, then synthesizes all outputs into a comprehensive risk assessment.
 
 ---
 
@@ -258,7 +258,6 @@ Key Benefits
 ⚡ 10-15 second analysis vs. hours
 💰 $2.1M+ annual savings
 📊 100% consistency in risk assessment
-🎯 Real-time stakeholder communication
 🛠️ Troubleshooting
 Backend Won't Start
 # Check Python version
